@@ -5,44 +5,49 @@ import java.time.LocalDate;
 public class Funcionario {
 	
 	private int idCpf;
-	private char nome;
-	private LocalDate dataNac;
-	private char endereco;
+	private String nome;
+	private LocalDate dataNasc;
+	private String endereco;
 	private boolean habilitado;
 	private boolean disponivel;
 	
-	public Funcionario(int idCpf, char nome, LocalDate dataNac, char endereco, boolean habilitado, boolean disponivel) {
+	public Funcionario(int idCpf, String nome, LocalDate dataNasc, String endereco, boolean habilitado, boolean disponivel) {
 		super();
 		this.idCpf = idCpf;
 		this.nome = nome;
-		this.dataNac = dataNac;
+		this.dataNasc = dataNasc;
 		this.endereco = endereco;
 		this.habilitado = habilitado;
 		this.disponivel = disponivel;
 	}
 	
+	public Funcionario() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getIdCpf() {
 		return idCpf;
 	}
 	public void setIdCpf(int idCpf) {
 		this.idCpf = idCpf;
 	}
-	public char getNome() {
+		
+	public String getNome() {
 		return nome;
 	}
-	public void setNome(char nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public LocalDate getDataNac() {
-		return dataNac;
+		return dataNasc;
 	}
-	public void setDataNac(LocalDate dataNac) {
-		this.dataNac = dataNac;
+	public void setDataNac(LocalDate dataNasc) {
+		this.dataNasc = dataNasc;
 	}
-	public char getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(char endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public boolean isHabilitado() {
@@ -56,10 +61,26 @@ public class Funcionario {
 	}
 	public void setDisponivel(boolean disponivel) {
 		this.disponivel = disponivel;
+		
+
+		}
+	
+	public String toString() {
+		return nome + " - " + idCpf + " - " + dataNasc + " - "  + endereco + " - " + habilitado + " - " + disponivel;
+		
 	}
-	
-	
+		
+		
+/*		
+	public void setNome(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	
-
+	public void setIdCpf(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+		
+*/
 }

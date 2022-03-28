@@ -47,6 +47,5 @@ public class Chamado {
 		this.distanciaPercorrida = distanciaPercorrida;
 	}
 	
-	
-	
+		
 }
