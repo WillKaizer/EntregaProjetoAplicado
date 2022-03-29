@@ -8,7 +8,7 @@ import model.Veiculo;
 public class VeiculoController {
 	
 	public void salvar(Veiculo Veiculo) throws Exception {
-        if (Veiculo.getNumPlaca() > 7 || Veiculo.getNumPlaca() < 7) {
+        if (Veiculo.getNumPlaca().length() < 7) {
         	throw new Exception("Placa inválida! ");
         }
         VeiculoDao.getInstace().salvar(Veiculo);
@@ -16,7 +16,7 @@ public class VeiculoController {
     }
 	
 	public void atualizar(Veiculo Veiculo) throws Exception {
-		if (Veiculo.getNumPlaca() > 7 || Veiculo.getNumPlaca() < 7) {
+		if (Veiculo.getNumPlaca().length() < 7) {
         	throw new Exception("Placa inválida! ");
 	    }
 		VeiculoDao.getInstace().atualizar(Veiculo);

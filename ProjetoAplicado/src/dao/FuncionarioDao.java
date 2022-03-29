@@ -10,7 +10,7 @@ public class FuncionarioDao {
 	private static FuncionarioDao instance;
 	private List<Funcionario> listaFuncionarios = new ArrayList<>();
 	
-	public static FuncionarioDao getInstace() {
+	public static FuncionarioDao getInstance() {
 		if (instance == null) {
 			instance = new FuncionarioDao();
 		}
@@ -23,7 +23,7 @@ public class FuncionarioDao {
     }
 	
 	public void atualizar(Funcionario funcionario) {
-		listaFuncionarios.set(funcionario.getIdCpf(), funcionario);
+		listaFuncionarios.set(funcionario.getidFuncionario(), funcionario);
 	}
 	
 	public void excluir(int idFuncionario) {

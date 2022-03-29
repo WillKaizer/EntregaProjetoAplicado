@@ -8,18 +8,18 @@ import model.Funcionario;
 public class FuncionarioController { 
 	
 	public void salvar(Funcionario Funcionario) throws Exception {
-	    if (Funcionario.getIdCpf() == 0 || Funcionario.getIdCpf() == 0) {
+	    if (Funcionario.getidFuncionario() == 0) {
     	    throw new Exception("Funcionário inválido... ");
         }
-	    FuncionarioDao.getInstace().salvar(Funcionario);
+	    FuncionarioDao.getInstance().salvar(Funcionario);
 	
     }
 	
 	public void atualizar(Funcionario Funcionario) throws Exception {
-		if (Funcionario.getIdCpf() == 0 || Funcionario.getIdCpf() == 0) {
+		if (Funcionario.getidFuncionario() == 0) {
         	throw new Exception("Funcionário inválido! ");
 	    }
-		FuncionarioDao.getInstace().atualizar(Funcionario);
+		FuncionarioDao.getInstance().atualizar(Funcionario);
 	
 	}
 	
@@ -27,12 +27,12 @@ public class FuncionarioController {
 		if (idFuncionario == 0) {
 			throw new Exception("Nenhum funcionário selecionado... ");
 		}
-		FuncionarioDao.getInstace().excluir(idFuncionario);
+		FuncionarioDao.getInstance().excluir(idFuncionario);
 		
 	}
 
 	public List<Funcionario> listar(){
-		return FuncionarioDao.getInstace().listar();
+		return FuncionarioDao.getInstance().listar();
 	}
 	
 	

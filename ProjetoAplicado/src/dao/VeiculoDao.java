@@ -25,7 +25,7 @@ public class VeiculoDao {
     }
 	
 	public void atualizar(Veiculo Veiculo) {
-		listaVeiculos.set(Veiculo.getVeiculoIdChassi(), Veiculo);
+		listaVeiculos.set(Veiculo.getNumFrota(), Veiculo);
 	}
 	
 	public void excluir(int idVeiculo) {

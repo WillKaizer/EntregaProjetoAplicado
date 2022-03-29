@@ -20,6 +20,8 @@ public class ChamadoDao {
 	public void registrarChamado(Chamado Chamado) {
 		listaChamados.add(Chamado);
 	}
-
 	
+	public List<Chamado> listar(){
+		return listaChamados;
+	}
 }

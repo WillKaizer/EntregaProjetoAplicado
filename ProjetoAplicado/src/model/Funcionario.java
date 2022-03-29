@@ -4,16 +4,18 @@ import java.time.LocalDate;
 
 public class Funcionario {
 	
-	private int idCpf;
+	private String idCpf;
+	private int idFuncionario;
 	private String nome;
 	private LocalDate dataNasc;
 	private String endereco;
 	private boolean habilitado;
 	private boolean disponivel;
 	
-	public Funcionario(int idCpf, String nome, LocalDate dataNasc, String endereco, boolean habilitado, boolean disponivel) {
+	public Funcionario(String idCpf, int idFuncionario, String nome, LocalDate dataNasc, String endereco, boolean habilitado, boolean disponivel) {
 		super();
 		this.idCpf = idCpf;
+		this.idFuncionario = idFuncionario;
 		this.nome = nome;
 		this.dataNasc = dataNasc;
 		this.endereco = endereco;
@@ -25,11 +27,21 @@ public class Funcionario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getIdCpf() {
+	public String getIdCpf() {
 		return idCpf;
 	}
-	public void setIdCpf(int idCpf) {
+
+
+	public void setIdCpf(String idCpf) {
 		this.idCpf = idCpf;
+	}
+	
+	public int getidFuncionario() {
+		return idFuncionario;
+	}
+	
+	public void setidFuncionario(int idFuncionario) {
+		this.idFuncionario = idFuncionario;
 	}
 		
 	public String getNome() {
@@ -66,7 +78,7 @@ public class Funcionario {
 		}
 	
 	public String toString() {
-		return nome + " - " + idCpf + " - " + dataNasc + " - "  + endereco + " - " + habilitado + " - " + disponivel;
+		return nome + " - " + idCpf + " - "  + idFuncionario + " - " + dataNasc + " - "  + endereco + " - " + habilitado + " - " + disponivel;
 		
 	}
 		

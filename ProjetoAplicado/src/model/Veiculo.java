@@ -3,13 +3,13 @@ package model;
 public class Veiculo {
 	
 	private int numFrota;
-	private char numPlaca;
+	private String numPlaca;
 	private float kmLitro;
 	private boolean veiculoRevisado;
-	private char veiculoIdChassi;
+	private String veiculoIdChassi;
 	
 		
-	public Veiculo(int numFrota, char numPlaca, float kmLitro, boolean veiculoRevisado, char veiculoIdChassi) {
+	public Veiculo(int numFrota, String numPlaca, float kmLitro, boolean veiculoRevisado, String veiculoIdChassi) {
 		super();
 		this.numFrota = numFrota;
 		this.numPlaca = numPlaca;
@@ -19,16 +19,19 @@ public class Veiculo {
 	
 	}
 	
+	public Veiculo() {
+	}
+
 	public int getNumFrota() {
 		return numFrota;
 	}
 	public void setNumFrota(int numFrota) {
 		this.numFrota = numFrota;
 	}
-	public char getNumPlaca() {
+	public String getNumPlaca() {
 		return numPlaca;
 	}
-	public void setNumPlaca(char numPlaca) {
+	public void setNumPlaca(String numPlaca) {
 		this.numPlaca = numPlaca;
 	}
 	public float getKmLitro() {
@@ -43,12 +46,14 @@ public class Veiculo {
 	public void setVeiculoRevisado(boolean veiculoRevisado) {
 		this.veiculoRevisado = veiculoRevisado;
 	}
-	public char getVeiculoIdChassi() {
+	public String getVeiculoIdChassi() {
 		return veiculoIdChassi;
 	}
-	public void setVeiculoIdChassi(char veiculoIdChassi) {
+	public void setVeiculoIdChassi(String veiculoIdChassi) {
 		this.veiculoIdChassi = veiculoIdChassi;
 	}
 	
-
+	public String toString() {
+		return numFrota + " - " + numPlaca + " - " + kmLitro + " - "  + veiculoRevisado + " - " + veiculoIdChassi ;
+	}
 }
