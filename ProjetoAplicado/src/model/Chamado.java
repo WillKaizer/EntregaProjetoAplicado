@@ -1,69 +1,90 @@
 package model;
 
+
 public class Chamado {
 
-	private int numChamado;
-	private boolean inicioChamado;
-	private boolean fimChamado;
-	private String enderecoChamado;
-	private float kmSaidaVeiculo;
-	private float kmChegadaVeiculo;
-	
-	public Chamado(int numChamado, boolean inicioChamado, boolean fimChamado, String enderecoChamado, float kmSaidaVeiculo, float kmChegadaVeiculo) {
-		super();
-		this.numChamado = numChamado;
-		this.inicioChamado = inicioChamado;
-		this.fimChamado = fimChamado;
-		this.enderecoChamado = enderecoChamado;
-		this.kmSaidaVeiculo = kmSaidaVeiculo;
-		this.kmChegadaVeiculo = kmChegadaVeiculo;
-	}
-	
-	public Chamado() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public int getNumChamado() {
-		return numChamado;
-	}
-	public void setNumChamado(int numChamado) {
-		this.numChamado = numChamado;
-	}
-	public boolean getInicioChamado() {
-		return inicioChamado;
-	}
-	public void setInicioChamado(boolean inicioChamado) {
-		this.inicioChamado = inicioChamado;
-	}
-	public boolean getFimChamado() {
-		return fimChamado;
-	}
-	public void setFimChamado(boolean fimChamado) {
-		this.fimChamado = fimChamado;
-	}
-	public String getenderecoChamado() {
-		return enderecoChamado;
-	}
-	public void setenderecoChamado(String enderecoChamado) {
-		this.enderecoChamado = enderecoChamado;
-	}
-	public float getkmSaidaVeiculo() {
-		return kmSaidaVeiculo;
-	}
-	public void setkmSaidaVeiculo(float kmSaidaVeiculo) {
-		this.kmSaidaVeiculo = kmSaidaVeiculo;
-	}
-	
-	public float getkmChegadaVeiculo() {
-	return kmChegadaVeiculo;
-	}
-	public void setkmChegadaVeiculo(float kmChegadaVeiculo) {
-	this.kmChegadaVeiculo = kmChegadaVeiculo;
+	private int idChamado;
+	private String data;
+	private String endereco;
+	private Double distancia;
+	private Double emissaoCarbono;
+	private Funcionario funcionario;
+	private Veiculo veiculo;
+		
+	public Chamado(String data, String endereco, Double distancia, Funcionario funcionario, Veiculo veiculo) {
+				this.data = data;
+				this.endereco = endereco;
+				this.distancia = distancia;
+				this.funcionario = funcionario;
+				this.veiculo = veiculo;
+				calcularEmissaoCarbono();
 	}
 
+	public Chamado() {}
 	
-	public String toString() {
-		return numChamado + " - " + inicioChamado + " - " + fimChamado + " - "  + enderecoChamado + " - " + kmSaidaVeiculo + " - " + kmChegadaVeiculo ;
+	public int getIdChamado() {
+		return idChamado;
 	}
+	
+	public void setId(int idChamado) {
+		this.idChamado = idChamado;
+	}
+	
+	public String getData() {
+		return data;
+	}
+	
+	public void setData(String data) {
+		this.data = data;
 		
+	}
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public Double getDistancia() {
+		return distancia;
+	}
+	
+	public void setDistancia(Double distancia) {
+		this.distancia = distancia;
+	}
+	
+	public Double getEmissaoCarbono() {
+		return emissaoCarbono;
+	}
+	
+	public void setEmissaoCarbono(Double emissaoCarbono) {
+		this.emissaoCarbono = emissaoCarbono;
+	}
+	
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+	
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+	
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+	
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+
+	public void calcularEmissaoCarbono() {
+		Double consumo = distancia / veiculo.getAutonomia();
+		this.emissaoCarbono = consumo * 0.82 * 0.75 * 3.7;
+	}
+	
+	public String toString()  {
+		return idChamado + " - " + endereco + " - ";
+	}
+	
 }

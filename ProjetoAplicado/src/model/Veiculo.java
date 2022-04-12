@@ -2,58 +2,62 @@ package model;
 
 public class Veiculo {
 	
-	private int numFrota;
-	private String numPlaca;
-	private float kmLitro;
-	private boolean veiculoRevisado;
-	private String veiculoIdChassi;
+	private int idVeiculo;
+	private String modelo;
+	private String placa;
+	private Float autonomia;
+	private boolean disponivel;
 	
+	public Veiculo(String modelo, String placa, Float autonomia) {
+		this.modelo = modelo;
+		this.placa = placa;
+		this.autonomia = autonomia;
 		
-	public Veiculo(int numFrota, String numPlaca, float kmLitro, boolean veiculoRevisado, String veiculoIdChassi) {
-		super();
-		this.numFrota = numFrota;
-		this.numPlaca = numPlaca;
-		this.kmLitro = kmLitro;
-		this.veiculoRevisado = veiculoRevisado;
-		this.veiculoIdChassi = veiculoIdChassi;
-	
 	}
 	
 	public Veiculo() {
+	
 	}
 
-	public int getNumFrota() {
-		return numFrota;
+	public int getIdVeiculo() {
+		return idVeiculo;
 	}
-	public void setNumFrota(int numFrota) {
-		this.numFrota = numFrota;
+
+	public void setId(int idVeiculo) {
+		this.idVeiculo = idVeiculo;
 	}
-	public String getNumPlaca() {
-		return numPlaca;
+
+	public String getModelo() {
+		return modelo;
 	}
-	public void setNumPlaca(String numPlaca) {
-		this.numPlaca = numPlaca;
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
-	public float getKmLitro() {
-		return kmLitro;
+
+	public String getPlaca() {
+		return placa;
 	}
-	public void setKmLitro(float kmLitro) {
-		this.kmLitro = kmLitro;
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	
 	}
-	public boolean isVeiculoRevisado() {
-		return veiculoRevisado;
+
+	public Float getAutonomia() {
+		return autonomia;
 	}
-	public void setVeiculoRevisado(boolean veiculoRevisado) {
-		this.veiculoRevisado = veiculoRevisado;
-	}
-	public String getVeiculoIdChassi() {
-		return veiculoIdChassi;
-	}
-	public void setVeiculoIdChassi(String veiculoIdChassi) {
-		this.veiculoIdChassi = veiculoIdChassi;
+
+	public void setAutonomia(Float autonomia) {
+		this.autonomia = autonomia;
 	}
 	
+	public boolean isDisponivel() {
+		return disponivel;
+	}	
+	
 	public String toString() {
-		return numFrota + " - " + numPlaca + " - " + kmLitro + " - "  + veiculoRevisado + " - " + veiculoIdChassi ;
+		return modelo + " - Placa: " + placa;
 	}
+	
 }
